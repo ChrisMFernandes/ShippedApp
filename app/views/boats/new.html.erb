@@ -1,0 +1,14 @@
+<h1>Add a new Boat</h1>
+
+<%= form_for @boats do |f| %>
+
+<p>Name	<%= f.text_field :name %></p>
+
+<p>Container	<%= f.text_field :containers %></p>
+
+<p>Location	<%= f.text_field :location %></p>
+
+
+<%= submit_tag "Add"%>
+
+<% end %>
