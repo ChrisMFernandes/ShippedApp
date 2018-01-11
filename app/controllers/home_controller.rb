@@ -3,5 +3,4 @@ class HomeController < ApplicationController
 		@boats = Boat.all
 	end
 
-	
 end

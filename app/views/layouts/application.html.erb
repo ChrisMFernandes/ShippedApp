@@ -9,6 +9,18 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand">Shipping App</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Boats", boats_path %></li>
+      <li><%= link_to "Jobs", jobs_path %></li>
+    </ul>
+  </div>
+</nav>
+<div class="container"
   	<p class="navbar-text pull-right">
 		<% if user_signed_in? %>
   			Logged in as <strong><%= current_user.email %></strong>.
@@ -26,6 +38,7 @@
 	<% if alert %>
   		<p class="alert alert-danger"><%= alert %></p>
 	<% end %>
+</div>
     <%= yield %>
   </body>
 </html>
