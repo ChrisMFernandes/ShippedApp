@@ -1,9 +1,17 @@
-<h1>Boat</h1>
+<div class="container">
+	
+	<div class="text-center">
+		<h1>Welcome to our Shipping App!</h1>
+	</div>
 
-<% @boats.each do |t| %>
-<%= t.name %>
-<%= t.containers %>
-<%= t.location %>
+	<h1>Boat</h1>
 
-<% end %>
+		<% @boats.each do |t| %>
+			<%= t.name %>
+			<%= t.containers %>
+			<%= t.location %>
+
+		<% end %>
+
+</div>
 

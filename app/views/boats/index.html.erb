@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="text-center">
+		<h1>Boats</h1>
+	</div>
+
+	 <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Containers</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<% @boats.each do |t| %>
+      <tr>
+        <td><%= t.name %></td>
+        <td><%= t.containers %></td>
+        <td><%= t.location %></td> 
+        <td><%= link_to "Edit Boat", edit_boat_path(t) %></td>
+        <td><%= link_to "Delete Boat", boat_path(t), method: :delete, data: {confirm: "Are you sure?"} %><td>
+      </tr>
+       <% end %>
+    </tbody>
+  </table>
+	
+
+</div>
