@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="text-center">
+		<h1>Edit Job</h1>
+	</div>
+
+		<%= bootstrap_form_for(@boat_jobs, layout: :horizontal) do |t| %>
+			<%= t.fields_for @boats do |t| %>
+			<p><%= t.text_field :name %></p>
+			<% end %>
+		<div class="text-center">
+				<%= submit_tag "Confirm" %>
+		</div>
+		<% end %>
+</div>
+
