@@ -1,12 +1,10 @@
 <div class="container">
 	<div class="text-center">
-		<h1>Edit Job</h1>
+		<h1>Edit existing assignment</h1>
 	</div>
-
-		<%= bootstrap_form_for(@boat_jobs, layout: :horizontal) do |t| %>
-			<%= t.fields_for @boats do |t| %>
-			<p><%= t.text_field :name %></p>
-			<% end %>
+			<%= bootstrap_form_for(@boat_jobs, layout: :horizontal) do |t| %>
+    		<%= t.collection_select :boat_id, Boat.order(:name), :id, :name, include_blank: true %>
+    		<%= t.collection_select :job_id, Job.order(:description), :id, :description, include_blank: true %>
 		<div class="text-center">
 				<%= submit_tag "Confirm" %>
 		</div>
