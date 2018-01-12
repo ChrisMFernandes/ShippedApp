@@ -1,0 +1,6 @@
+<%= bootstrap_form_for(@boat_jobs, layout: :horizontal) do |t| %>
+			<p><%= t.collection_select :boat_id, @boats, :name, :prompt => "Select a Boat" %>
+		<div class="text-center">
+				<%= submit_tag "Confirm" %>
+		</div>
+		<% end %>
