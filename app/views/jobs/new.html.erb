@@ -3,7 +3,8 @@
 		<h1>Add New Job</h1>
 	</div>
 		<div class="text-center">
-			<%= bootstrap_form_for(@jobs, layout: :inline) do |f|%>
+
+			<%= bootstrap_form_for(@jobs, layout: :vertical) do |f|%>
 				<label><%= f.text_field :description %></label>
 				<label><%= f.text_field :origin %></label>
 				<label><%= f.text_field :destination %></label>

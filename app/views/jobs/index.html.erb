@@ -22,10 +22,15 @@
         <td><%= t.cost %></td>
         <td><%= t.containers %></td>
         <td><%= link_to "Edit Job", edit_job_path(t) %></td>
+         <td><%= link_to "Delete Job", job_path(t), method: :delete, data: {confirm: "Are you sure?"} %><td>
       </tr>
        <% end %>
     </tbody>
   </table>
 	
-
+  <div class="container">
+  <div class="text-center">
+<p> <%= link_to "Add a new Job", new_job_path %> </p>
+</div>
+</div>
 </div>

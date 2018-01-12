@@ -4,3 +4,4 @@ class Job < ApplicationRecord
 
 	has_many :boats , through: :boat_jobs
 end
+
