@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20180110214542) do
   enable_extension "plpgsql"
 
   create_table "boat_jobs", force: :cascade do |t|
+    t.integer "boat_id"
+    t.integer "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
