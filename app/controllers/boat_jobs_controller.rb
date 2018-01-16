@@ -15,7 +15,7 @@ class BoatJobsController < ApplicationController
 	end
 
 	def create
-		@boats = Boat.create(name: params[:boat][:name], containers: params[:boat][:containers], location: params[:boat][:location])
+		@boats = Boat.create(name: params[:name], containers: params[:containers], location: params[:location])
 		redirect_to boat_jobs_path
 	end
 
@@ -27,9 +27,9 @@ class BoatJobsController < ApplicationController
 
 	def update
 		@jobs = Job.find(params[:id])
-		@jobs.update(description: params[:job][:description], origin: params[:job][:origin], destination: params[:job][:destination], cost: params[:job][:cost], containers: params[:job][:containers])
+		@jobs.update(description: params[:description], origin: params[:origin], destination: params[:destination], cost: params[:cost], containers: params[:containers])
 		@boats = Boat.find(params[:id])
-		@boats.update(name: params[:boat][:name], containers: params[:boat][:containers], location: params[:boat][:location])
+		@boats.update(name: params[:name], containers: params[:containers], location: params[:location])
 		redirect_to boat_jobs_path
 	end
 
