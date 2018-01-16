@@ -1,6 +1,6 @@
 <div class="container">
   <div class="text-center">
-    <h1>Jobs</h1>
+    <h1>Current Assignments</h1>
   </div>
 
    <table class="table table-striped">
@@ -22,6 +22,7 @@
         <td><%= Job.find(t.job_id).cost %></td>
         <td><%= Job.find(t.job_id).description %></td>
         <td><%= link_to "Edit Assignment", edit_boat_job_path(t) %></td>
+        <td><%= link_to "Delete Assignment", boat_job_path(t), method: :delete, data: {confirm: "Are you sure?"} %><td>
       </tr>
        <% end %>
     </tbody>
@@ -29,7 +30,7 @@
 
 <div class="container">
   <div class="text-center">
-<p> <%= link_to "Assign New", new_boat_job_path %> </p>
+<p> <%= link_to "Assign a boat to a job", new_boat_job_path %> </p>
   </div>
 </div>
   
