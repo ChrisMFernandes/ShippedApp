@@ -52,6 +52,28 @@
   		<p class="alert alert-danger"><%= alert %></p>
 	<% end %>
 </div>
+
+ <nav>
+      <div class="nav-wrapper black">
+       <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+ <ul class="right hide-on-med-and-down">
+          <li><a href="#">Artists</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Venues</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#">Artists</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Venues</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+  <script type="text/javascript">
+      $(function(){
+      $(".button-collapse").sideNav();
+    });
+    </script>
     <%= yield %>
 
 <footer class="container-fluid bg-4 text-center">
