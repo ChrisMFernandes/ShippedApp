@@ -44,5 +44,8 @@ class BoatsController < ApplicationController
 		redirect_to boats_path
 	end
 
+	def boat_params
+		params.require(:post).permit(:name, :container, :location, :image)
+	end
 end
 
