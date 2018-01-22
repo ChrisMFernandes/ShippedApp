@@ -11,4 +11,7 @@
 	Job.create(description: "Deliver Gremlins from New York to Hong Kong. BEWARE! DO NOT feed after midnight", origin: "New York City", destination: "Hong Kong", cost: 15000, containers: 100)
 	Job.create(description: "Deliver Pokemon from Los Angeles to Tokyo.. Attention! Pikachu is extremely dangerous! DO NOT HANDLE!", origin: "Los Angeles", destination: "Tokyo", cost: 20000, containers: 150)
 	Job.create(description: "Deliver Nukes from Washington D.C. to Quito... Signature required!", origin: "Washington D.C.", destination: "Quito", cost: 50000, containers: 110)
+	BoatJob.create(boat_id: 1, job_id: 1)
+	BoatJob.create(boat_id: 2, job_id: 2)
+	BoatJob.create(boat_id: 3, job_id: 3)
 

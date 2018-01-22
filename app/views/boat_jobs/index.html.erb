@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="text-center">
+    <h1>Current Assignments</h1>
+  </div>
+
+   <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Destination</th>
+        <th>Containers</th>
+        <th>Cost</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @boat_jobs.each do |t| %>
+      <tr>
+        <td><%= Boat.find(t.boat_id).name %></td>
+        <td><%= Job.find(t.job_id).destination %></td>
+        <td><%= Job.find(t.job_id).containers %></td>
+        <td><%= Job.find(t.job_id).cost %></td>
+        <td><%= Job.find(t.job_id).description %></td>
+        <td><%= link_to "Edit Assignment", edit_boat_job_path(t) %></td>
+        <td><%= link_to "Delete Assignment", boat_job_path(t), method: :delete, data: {confirm: "Are you sure?"} %><td>
+      </tr>
+       <% end %>
+    </tbody>
+  </table>
+
+<div class="container">
+  <div class="text-center">
+<p> <%= link_to "Assign a boat to a job", new_boat_job_path %> </p>
+  </div>
+</div>
+  
+
+</div>

@@ -1,0 +1,1 @@
+$('body').html("<h1><%= escape_javaScript(@boats.name) %></h1>").append("<%= escape_javaScript(@boats.containers) %>").append("<%= escape_javaScript(@boats.location) %>");

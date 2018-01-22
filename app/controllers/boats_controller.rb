@@ -13,8 +13,19 @@ class BoatsController < ApplicationController
 	end
 
 	def create
-		@boats = Boat.create(name: params[:boat][:name], containers: params[:boat][:containers], location: params[:boat][:location])
-		redirect_to boats_path
+		@boats = Boat.new(name: params[:boat][:name], containers: params[:boat][:containers], location: params[:boat][:location])
+
+  		respond_to do |format|
+    		if @boats.save
+      			format.html { redirect_to boats_path, notice: 'Boat was successfully created, yo!' }
+      			format.json { render :index, status: :created, location: boats_path }
+      			format.js
+    		else
+      			format.html { render :new }
+      			format.json { render json: @boats.errors, status: :unprocessable_entity }
+      			format.js
+    		end
+  		end
 	end
 
 	def edit
@@ -37,3 +48,4 @@ class BoatsController < ApplicationController
 		params.require(:post).permit(:name, :container, :location, :image)
 	end
 end
+

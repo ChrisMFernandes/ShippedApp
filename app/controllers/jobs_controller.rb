@@ -9,12 +9,24 @@ class JobsController < ApplicationController
 	end
 
 	def new
+		@job = Job.all
 		@jobs = Job.new
 	end
 
 	def create
 		@jobs = Job.create(description: params[:job][:description], origin: params[:job][:origin], destination: params[:job][:destination], cost: params[:job][:cost], containers: params[:job][:containers])
-		redirect_to jobs_path
+		
+		respond_to do |format|
+    		if @jobs.save
+      			format.html { redirect_to jobs_path, notice: 'Job was successfully created, yo!' }
+      			format.json { render :index, status: :created, location: jobs_path }
+      			format.js
+    		else
+      			format.html { render :new }
+      			format.json { render json: @jobs.errors, status: :unprocessable_entity }
+      			format.js
+    		end
+  		end
 	end
 
 	def edit

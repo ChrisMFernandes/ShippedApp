@@ -1,0 +1,1 @@
+$('body').html("<h1><%= escape_javaScript(@jobs.description) %></h1>").append("<%= escape_javaScript(@jobs.origin) %>").append("<%= escape_javaScript(@jobs.destination) %>").append("<%= escape_javaScript(@jobs.cost) %>").append("<%= escape_javaScript(@jobs.containers) %>");

@@ -1,5 +1,33 @@
 <div class="container">
 	<div class="text-center">
+		<h1>Existing Jobs</h1>
+	</div>
+
+	 <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Cost</th>
+        <th>Containers</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<% @job.each do |t| %>
+      <tr>
+        <td><%= t.description %></td>
+        <td><%= t.origin %></td>
+        <td><%= t.destination %></td> 
+        <td><%= t.cost %></td>
+        <td><%= t.containers %></td>
+      </tr>
+       <% end %>
+    </tbody>
+  </table>
+
+<div class="container">
+	<div class="text-center">
 		<h1>Add New Job</h1>
 	</div>
 		<div class="text-center">
@@ -15,4 +43,5 @@
 		</div>
 		<% end %>
 	</div>
+</div>
 </div>
